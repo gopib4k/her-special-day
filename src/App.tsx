@@ -241,7 +241,7 @@ function App() {
 
             <StorySection
               title="The Day I Noticed You ✨"
-              content="I don’t know if you remember it, but I do. That moment when I first saw you… something just felt different. Like my world paused for a second."
+              content="I don't know if you remember it, but I do. That moment when I first saw you… something just felt different. Like my world paused for a second."
             />
 
             <StorySection

@@ -20,7 +20,7 @@ function StarryNight({ onRestart }: Props) {
     "You make my days brighter ✨",
     "Happy Birthday 💖",
     "You are truly special 🌸",
-    "I’m lucky to know you 💫",
+    "I'm lucky to know you 💫",
     "You mean more than you know ❤️",
     "Your smile = my favorite thing 😊",
   ];
