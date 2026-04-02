@@ -476,12 +476,12 @@ function App() {
       {stage === 6 && (
         <FinalSurprise 
           images={[
-            "/public/image1.png",
-            "/public/image2.png",
-            "/public/image3.png",
-            "/public/image4.jpeg",
-            "/public/image5.png",
-            "/public/image6.png"
+            "/image1.png",
+            "/image2.png",
+            "/image3.png",
+            "/image4.jpeg",
+            "/image5.png",
+            "/image6.png"
           ]}
         />
       )}
