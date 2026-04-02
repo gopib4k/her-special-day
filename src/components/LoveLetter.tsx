@@ -284,21 +284,20 @@ function LoveLetter({ onNext }: LoveLetterProps) {
 
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const fullText = `Dear Special One,
+  const fullText = `Happy Birthday Susritha ✨
 
-This might seem like just a website, but it represents something much more meaningful. Every line of code, every animation, every word here was crafted with you in mind.
+I don’t know if this is the usual kind of birthday wish… but I wanted to make it something you’d remember. Not just another message, but something that carries a piece of how I see you and the moments we’ve shared.
 
-On your birthday, I wanted to create something that shows how much you mean to me. You deserve to feel celebrated, appreciated, and valued—not just today, but every single day.
+Sometimes, it’s not the big things that stay with us—it’s those random walks, small conversations, unexpected laughs, and the way time just passes without us even realizing it. And somehow, many of those moments have you in them.
 
-Your presence makes the world brighter. Your smile can turn an ordinary moment into something extraordinary. The way you care about others, the way you stay true to yourself—it's truly inspiring.
+This little space I created… it’s just my way of holding onto those memories. Not because they’re extraordinary to the world, but because they felt different to me. Real, simple, and meaningful in a way I can’t fully explain.
 
-I hope this year brings you everything you've been dreaming of and more. May it be filled with laughter, love, adventures, and beautiful memories.
+You might not notice it, but your presence has a way of making ordinary days feel a bit better, a bit lighter. And I guess that’s why I wanted to do this—just to make your day a little special in return.
 
-Thank you for being you. Thank you for the moments we've shared. Here's to many more.
+I hope this year brings you moments that make you genuinely happy, people who make you feel valued, and memories you’ll always smile back at.
 
-Happy Birthday! 🎂✨
-
-With all my heart 💜`;
+Happy Birthday once again… and thank you for being a part of some really nice moments in my life. 💜
+`;
 
   // 🌸 Lock in random values for the left side so they don't re-render during typing
   const leftDecorations = useMemo(() => {
