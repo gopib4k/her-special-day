@@ -334,12 +334,15 @@ import PasswordUnlock from './components/PasswordUnlock';
 import FinalSurprise from './components/FinalSurprise';
 import HeartLottie from './components/HeartLottie';
 import ButterflyLottie from './components/ButterflyLottie';
+
+// Importing the images directly from the new assets folder
 import img1 from './assets/image1.png';
 import img2 from './assets/image2.png';
 import img3 from './assets/image3.png';
-import img4 from './assets/image4.jpeg'; // Make sure this is .jpeg!
+import img4 from './assets/image4.jpeg'; 
 import img5 from './assets/image5.png';
 import img6 from './assets/image6.png';
+
 function App() {
   const [stage, setStage] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -348,7 +351,6 @@ function App() {
   const handleGiftOpen = () => {
     setStage(1);
 
-    // 🎵 smooth music fade-in
     if (audioRef.current) {
       audioRef.current.volume = 0;
       audioRef.current.play();
@@ -364,7 +366,6 @@ function App() {
       }, 100);
     }
 
-    // 🎉 confetti
     setTimeout(() => setShowConfetti(true), 1000);
     setTimeout(() => setShowConfetti(false), 5000);
   };
@@ -372,24 +373,18 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
 
-      {/* 🎵 Background Music */}
       <audio ref={audioRef} loop>
         <source src="/music.mp3" type="audio/mpeg" />
       </audio>
 
-      {/* ❤️ floating hearts only after gift */}
       {stage > 0 && <FloatingHearts />}
       {showConfetti && <Confetti />}
 
-      {/* 🎁 Stage 0 - Gift */}
       {stage === 0 && <GiftBox onOpen={handleGiftOpen} />}
 
-      {/* 📖 Stage 1 - Story */}
       {stage === 1 && (
         <div className="relative animate-fadeIn max-w-7xl mx-auto px-4 overflow-hidden">
           
-          {/* ✨ Lottie Background Decorations ✨ */}
-          {/* Left Side */}
           <div className="absolute inset-y-0 left-0 w-24 md:w-48 overflow-hidden pointer-events-none z-0">
             <ButterflyLottie className="absolute top-[10%] left-4 w-16 h-16 opacity-50" />
             <HeartLottie className="absolute top-[30%] left-10 w-12 h-12 opacity-40" />
@@ -397,7 +392,6 @@ function App() {
             <HeartLottie className="absolute top-[70%] left-12 w-10 h-10 opacity-30" />
           </div>
 
-          {/* Right Side */}
           <div className="absolute inset-y-0 right-0 w-24 md:w-48 overflow-hidden pointer-events-none z-0">
             <HeartLottie className="absolute top-[15%] right-8 w-14 h-14 opacity-60" />
             <ButterflyLottie className="absolute top-[35%] right-6 w-12 h-12 opacity-40" />
@@ -405,7 +399,6 @@ function App() {
             <ButterflyLottie className="absolute top-[75%] right-4 w-10 h-10 opacity-30" />
           </div>
 
-          {/* Story Content Area - ADDED flex, flex-col, and gap-12 for proper spacing */}
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col gap-12 py-10">
             
             <StorySection
@@ -415,19 +408,19 @@ function App() {
 
             <StorySection
               title="The Day I Noticed You ✨"
-              content= "I don’t know if you remember it… but I do. It wasn’t just the first time I saw you — it was the first time I heard you speak. The way you presented, your confidence, and that calm tone… it made everything else go silent for a moment. From then, I started noticing you more — not loudly, but quietly… just like you. 💭"
+              content="I don’t know if you remember it… but I do. It wasn’t just the first time I saw you — it was the first time I heard you speak. The way you presented, your confidence, and that calm tone… it made everything else go silent for a moment. From then, I started noticing you more — not loudly, but quietly… just like you. 💭"
             />
 
             <StorySection
               title="Things I Like About You 💖"
-              content= "I like how you don’t speak unnecessarily… but when you do, people listen. The way you stay away from the noise, focused on what really matters — that’s something I truly respect. You keep your circle small, your thoughts clear, and your presence meaningful. And when the moment comes, you don’t just step up… you own it effortlessly. Also… that iconic ponytail — simple, neat, and somehow perfectly you. ✨"/>
+              content="I like how you don’t speak unnecessarily… but when you do, people listen. The way you stay away from the noise, focused on what really matters — that’s something I truly respect. You keep your circle small, your thoughts clear, and your presence meaningful. And when the moment comes, you don’t just step up… you own it effortlessly. Also… that iconic ponytail — simple, neat, and somehow perfectly you. ✨"
+            />
 
             <StorySection
               title="My Favorite Memory 🌟"
-              content= "It’s never just one moment with you… it’s always the simple ones. That long walk with fizz where I made you walk more than I should have… and you still didn’t complain. 😅 That pani puri day, where you said it didn’t taste the same… but the moment still stayed with me. That café time with apple juice and endless conversations… where I didn’t even realize how time passed. And that journey which felt like 6 minutes instead of hours… I may not remember every conversation, but I clearly remember one thing — I never felt bored, not even for a second when I was with you. 💖"/>
+              content="It’s never just one moment with you… it’s always the simple ones. That long walk with fizz where I made you walk more than I should have… and you still didn’t complain. 😅 That pani puri day, where you said it didn’t taste the same… but the moment still stayed with me. That café time with apple juice and endless conversations… where I didn’t even realize how time passed. And that journey which felt like 6 minutes instead of hours… I may not remember every conversation, but I clearly remember one thing — I never felt bored, not even for a second when I was with you. 💖"
+            />
 
-
-            {/* ✨ Magical Continue Section */}
             <div className="flex flex-col items-center justify-center mt-8 mb-32 animate-fadeIn">
               <p className="text-pink-500 font-semibold tracking-wider mb-8 animate-pulse text-xl drop-shadow-md">
                 Wait… the magic isn't over yet ✨
@@ -457,27 +450,23 @@ function App() {
         </div>
       )}
 
-      {/* 💌 Stage 2 - Love Letter */}
       {stage === 2 && (
         <LoveLetter onNext={() => setStage(3)} />
       )}
 
-      {/* 🎮 Stage 3 - Heart Game */}
       {stage === 3 && (
         <HeartGame onNext={() => setStage(4)} />
       )}
 
-      {/* ⭐ Stage 4 - Starry Night */}
       {stage === 4 && (
         <StarryNight onRestart={() => setStage(5)} />
       )}
 
-      {/* 🔐 Stage 5 - Password */}
       {stage === 5 && (
         <PasswordUnlock onUnlock={() => setStage(6)} />
       )}
 
-      {/* 🎁 Stage 6 - Final Surprise */}
+      {/* 🎁 Stage 6 - Passing the imported images to the final stage */}
       {stage === 6 && (
         <FinalSurprise 
           images={[img1, img2, img3, img4, img5, img6]}
