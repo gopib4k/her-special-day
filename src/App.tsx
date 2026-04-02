@@ -334,7 +334,12 @@ import PasswordUnlock from './components/PasswordUnlock';
 import FinalSurprise from './components/FinalSurprise';
 import HeartLottie from './components/HeartLottie';
 import ButterflyLottie from './components/ButterflyLottie';
-
+import img1 from './assets/image1.png';
+import img2 from './assets/image2.png';
+import img3 from './assets/image3.png';
+import img4 from './assets/image4.jpeg'; // Make sure this is .jpeg!
+import img5 from './assets/image5.png';
+import img6 from './assets/image6.png';
 function App() {
   const [stage, setStage] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -475,14 +480,7 @@ function App() {
       {/* 🎁 Stage 6 - Final Surprise */}
       {stage === 6 && (
         <FinalSurprise 
-          images={[
-            "/image1.png",
-            "/image2.png",
-            "/image3.png",
-            "/image4.jpeg",
-            "/image5.png",
-            "/image6.png"
-          ]}
+          images={[img1, img2, img3, img4, img5, img6]}
         />
       )}
 
