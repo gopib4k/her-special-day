@@ -7,22 +7,75 @@ interface Props {
 
 function FinalSurprise({ images = [] }: Props) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  
+  // New state to trigger the final farewell screen
+  const [showFarewell, setShowFarewell] = useState(false);
 
   // Default captions to match the romantic, personal vibe
   const defaultCaptions = [
-  "Pani puri tinna tarwatha nuvvu, 'nenu eppudu ikkade thinta… kani ivala antha taste ledu' ani cheppinappudu, I didn’t know what to say… but somehow, that moment stayed with me. 💭Conversations anni gurthulevu… kani manam akkada kalisi pani puri tinna aa scene matram, I’ll never forget.💛",
-  "Just ala 'small walk' ani pilichi, fizz thaguthu chala dooram nadipincha kadha… till Charmas varaku. 😅Hostel ki reach ayyaka konchem guilty ga feel ayyevaadini — arey, antha dooram nadipincha ani… but the best part? You never complained. That’s what made it truly special.💖",
-  "Hey, neeku gurthundha… we went to a café, akkada tea or coffee kakunda, apple juice teeskoni ala time spend chesam. 😄Manam em matladamo exact ga gurthuledu… kani chala sepu matladukuntune unnam. 💭Honestly, nenu okka second kuda bored feel avvaledu… spending time with you always feels that easy and special.🌸",
-  "I always pay attention when you’re giving a presentation… because antha baavuntundi nee way of delivering content. ✨Your voice adds an extra sweetness to everything you say, and it just makes it even more beautiful to listen. 🎶Nee presentation vinnappudalla, nenu kooda neela confident ga, smooth ga cheppali ani anipisthundi.💫",
-  "Mana class lo aa Proton mails drama gurthundha…andaram mana class lo gather ayyi, okkokkallani suspect name cheppamani adiginappudu, nuv ne love name cheppav 👀, Ame 3rd bench lo undi, and nuvvu full serious ga tana meedha points cheppadam start chesav… honestly, nenu akkada shock ayyanu.😄",
-  "One of the best journeys till now is travelling with you… and movie choodadam inka special ayyindhi. 🎬✨Movie ayyaka kuda manam coding problems discuss chesthu, ala time ela pass ayyindo teliyaledu 😄KMM reach ayye sariki 5 hours pattindhi emo… kani naku matram adi just 6 minutes la anipinchindhi. 💭 Honestly, time aa teliyaledu assala.💖"
-];
+    "Pani puri tinna tarwatha nuvvu, 'nenu eppudu ikkade thinta… kani ivala antha taste ledu' ani cheppinappudu, I didn’t know what to say… but somehow, that moment stayed with me. 💭Conversations anni gurthulevu… kani manam akkada kalisi pani puri tinna aa scene matram, I’ll never forget.💛",
+    "Just ala 'small walk' ani pilichi, fizz thaguthu chala dooram nadipincha kadha… till Charmas varaku. 😅Hostel ki reach ayyaka konchem guilty ga feel ayyevaadini — arey, antha dooram nadipincha ani… but the best part? You never complained. That’s what made it truly special.💖",
+    "Hey, neeku gurthundha… we went to a café, akkada tea or coffee kakunda, apple juice teeskoni ala time spend chesam. 😄Manam em matladamo exact ga gurthuledu… kani chala sepu matladukuntune unnam. 💭Honestly, nenu okka second kuda bored feel avvaledu… spending time with you always feels that easy and special.🌸",
+    "I always pay attention when you’re giving a presentation… because antha baavuntundi nee way of delivering content. ✨Your voice adds an extra sweetness to everything you say, and it just makes it even more beautiful to listen. 🎶Nee presentation vinnappudalla, nenu kooda neela confident ga, smooth ga cheppali ani anipisthundi.💫",
+    "Mana class lo aa Proton mails drama gurthundha…andaram mana class lo gather ayyi, okkokkallani suspect name cheppamani adiginappudu, nuv ne love name cheppav 👀, Ame 3rd bench lo undi, and nuvvu full serious ga tana meedha points cheppadam start chesav… honestly, nenu akkada shock ayyanu.😄",
+    "One of the best journeys till now is travelling with you… and movie choodadam inka special ayyindhi. 🎬✨Movie ayyaka kuda manam coding problems discuss chesthu, ala time ela pass ayyindo teliyaledu 😄KMM reach ayye sariki 5 hours pattindhi emo… kani naku matram adi just 6 minutes la anipinchindhi. 💭 Honestly, time aa teliyaledu assala.💖"
+  ];
 
   // Helper to generate the array to render
   const galleryItems = images.length > 0 
     ? images 
     : Array.from({ length: 6 }).map(() => '');
 
+  // 🌸 The Final Farewell Screen
+  if (showFarewell) {
+    return (
+      <div className="min-h-screen relative flex flex-col items-center justify-center px-4 overflow-hidden bg-[#0a0514] animate-fadeIn">
+        {/* Background elements */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))] -z-20"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] animate-pulse -z-10"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-[100px] animate-pulse -z-10" style={{ animationDelay: '2s' }}></div>
+        
+        <div className="text-center z-10 space-y-8 max-w-3xl mx-auto">
+          <h1 
+            className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-purple-300 via-pink-200 to-indigo-300 bg-clip-text text-transparent drop-shadow-lg animate-slideUp" 
+            style={{ animationFillMode: 'both' }}
+          >
+            That's it Susritha! ✨
+          </h1>
+          
+          <p 
+            className="text-2xl md:text-4xl text-purple-200/90 font-medium leading-relaxed animate-slideUp" 
+            style={{ animationDelay: '0.3s', animationFillMode: 'both' }}
+          >
+            May your year be as beautiful as you are! 💖
+          </p>
+          
+          <div 
+            className="pt-8 animate-slideUp" 
+            style={{ animationDelay: '0.6s', animationFillMode: 'both' }}
+          >
+            <p className="text-xl md:text-2xl text-purple-300/70 font-serif italic mb-8">
+              Enjoy your day, See you! 👋
+            </p>
+            <Heart className="w-12 h-12 mx-auto text-pink-400 fill-pink-400/50 animate-pulse drop-shadow-lg" />
+          </div>
+        </div>
+
+        {/* Local animations just for this page transition */}
+        <style>{`
+          @keyframes slideUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+          }
+          .animate-slideUp {
+            animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
+        `}</style>
+      </div>
+    );
+  }
+
+  // 📸 The Gallery Screen
   return (
     <div className="min-h-screen relative flex flex-col items-center py-16 px-4 md:px-8 overflow-hidden bg-[#0a0514]">
       
@@ -99,24 +152,30 @@ function FinalSurprise({ images = [] }: Props) {
         })}
       </div>
 
-      {/* 💖 Bottom Message */}
-      <div className="text-center mt-24 relative z-10 animate-fadeIn">
-  <div className="inline-block px-10 py-6 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-[0_0_40px_rgba(168,85,247,0.25)]">
+      {/* 💖 Bottom Message & Next Button */}
+      <div className="text-center mt-24 relative z-10 animate-fadeIn flex flex-col items-center">
+        <div className="inline-block px-10 py-6 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-[0_0_40px_rgba(168,85,247,0.25)]">
+          <p className="text-2xl text-purple-100 mb-4 font-medium tracking-wide">
+            I hope you liked these uncaptured moments… 💭
+          </p>
 
-    <p className="text-2xl text-purple-100 mb-4 font-medium tracking-wide">
-      I hope you liked these uncaptured moments… 💭
-    </p>
+          <p className="text-3xl font-bold bg-gradient-to-r from-purple-200 via-pink-200 to-indigo-200 bg-clip-text text-transparent leading-relaxed">
+            I know ivi AI tho chesinavi… Kudhirithe, I’ll try to capture the real ones next time! 💜
+          </p>
 
-    <p className="text-3xl font-bold bg-gradient-to-r from-purple-200 via-pink-200 to-indigo-200 bg-clip-text text-transparent leading-relaxed">
-      I know ivi AI tho chesinavi… Kudhirithe, I’ll try to capture the real ones next time! 💜
-    </p>
+          <p className="mt-3 text-xl font-semibold text-pink-200/90">
+            Konchem honest ga cheppu… ela anipinchindi? 😄
+          </p>
+        </div>
 
-    <p className="mt-3 text-xl font-semibold text-pink-200/90">
-      Konchem honest ga cheppu… ela anipinchindi? 😄
-    </p>
-
-  </div>
-</div>
+        {/* Button to Farewell Page */}
+        <button
+          onClick={() => setShowFarewell(true)}
+          className="mt-12 px-10 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold text-lg tracking-wider border border-purple-300/30 rounded-full backdrop-blur-md transition-all duration-300 shadow-[0_0_20px_rgba(216,180,254,0.2)] hover:shadow-[0_0_40px_rgba(216,180,254,0.5)] transform hover:-translate-y-1 flex items-center gap-2 group"
+        >
+          One last thing <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+        </button>
+      </div>
 
       {/* 🔍 Interactive Fullscreen Lightbox */}
       {selectedImage && (
@@ -138,7 +197,7 @@ function FinalSurprise({ images = [] }: Props) {
             src={selectedImage} 
             alt="Fullscreen memory" 
             className="max-w-full max-h-full object-contain rounded-lg shadow-[0_0_50px_rgba(216,180,254,0.3)] transform scale-95 animate-zoomIn"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image itself
+            onClick={(e) => e.stopPropagation()} 
           />
         </div>
       )}

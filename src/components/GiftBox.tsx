@@ -1,42 +1,4 @@
-// import { Gift } from 'lucide-react';
-
-// interface GiftBoxProps {
-//   onOpen: () => void;
-// }
-
-// function GiftBox({ onOpen }: GiftBoxProps) {
-//   return (
-//     <div className="min-h-screen flex flex-col items-center justify-center p-4">
-//       <div className="text-center mb-12 animate-fadeIn">
-//         <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent mb-4">
-//           Something Special
-//         </h1>
-//         <p className="text-xl md:text-2xl text-gray-600">
-//           Just for you 💝
-//         </p>
-//       </div>
-
-//       <button
-//         onClick={onOpen}
-//         className="group relative animate-bounce hover:animate-none transition-all duration-300"
-//       >
-//         <div className="absolute inset-0 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
-
-//         <div className="relative bg-gradient-to-br from-pink-400 via-purple-400 to-blue-400 p-12 md:p-16 rounded-3xl shadow-2xl transform group-hover:scale-110 transition-all duration-300">
-//           <Gift className="w-24 h-24 md:w-32 md:h-32 text-white" />
-//         </div>
-//       </button>
-
-//       <p className="mt-8 text-lg md:text-xl text-gray-600 animate-pulse">
-//         Click the gift to open 🎁
-//       </p>
-//     </div>
-//   );
-// }
-
-// export default GiftBox;
-
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { Gift } from 'lucide-react';
 
 interface GiftBoxProps {

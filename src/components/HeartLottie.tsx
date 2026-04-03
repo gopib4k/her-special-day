@@ -1,44 +1,10 @@
-// import React from 'react';
-
-// interface HeartProps {
-//   className?: string;
-// }
-
-// function HeartLottie({ className }: HeartProps) {
-//   // Pick a random heart style
-//   const hearts = ['💖', '💝', '💕', '💗', '💓'];
-//   const randomHeart = hearts[Math.floor(Math.random() * hearts.length)];
-  
-//   return (
-//     <div 
-//       className={`flex items-center justify-center text-4xl md:text-5xl drop-shadow-md ${className}`}
-//       style={{
-//         // Randomize the pulsing speed
-//         animation: `magicPulse ${2 + Math.random() * 2}s ease-in-out infinite`
-//       }}
-//     >
-//       {randomHeart}
-//       <style>{`
-//         @keyframes magicPulse {
-//           0%, 100% { transform: scale(1); opacity: 0.7; }
-//           50% { transform: scale(1.15); opacity: 1; }
-//         }
-//       `}</style>
-//     </div>
-//   );
-// }
-
-// export default HeartLottie;
-
-import React from 'react';
-
 interface HeartProps {
   className?: string;
 }
 
 function HeartLottie({ className }: HeartProps) {
   // 💜 BTS Theme: Purple hearts, finger hearts, and magic sparkles!
-  const btsEmojis = ['💜', '🫰', '✨', '🔮', '🌌', '💟'];
+  const btsEmojis = ['💜', '🎀', '🫰', '✨', '🔮', '💟'];
   const randomEmoji = btsEmojis[Math.floor(Math.random() * btsEmojis.length)];
   
   return (
