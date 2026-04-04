@@ -25,7 +25,7 @@ function HeartGame({ onNext }: HeartGameProps) {
     "Tbh - to be honest, Ngl - not gonna lie, btw - you're so pretty 🎀",
     "Beautiful person is rare to find, i mean just look at you! 👀",
     "You make simple moments feel quietly special ✨",
-    "I don’t remember every word, but I remember how it felt 💖",
+    "I was going to say something smart… but then I got distracted looking at you 💖",
     "Somehow, you make everything feel a little lighter 🌸",
   ];
 
